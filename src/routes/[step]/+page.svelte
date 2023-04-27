@@ -92,6 +92,7 @@
 		<SlideWrapper
 			{step}
 			{index}
+			duration={data.speed}
 		>
 			<svelte:component this={component} />
 		</SlideWrapper>
@@ -99,7 +100,7 @@
 
 	{#if slides[step].chapter}
 		<div
-			transition:fly={{ x: -100, duration: 250 }}
+			transition:fly={{ x: -100, duration: data.speed }}
 			class="fixed top-0 left-0 h-6 flex items-center justify-end p-10 text-lg"
 			class:text-white={$darkMode}
 		>
@@ -122,6 +123,7 @@
 		<Progress
 			step={step + 1}
 			length={slides.length}
+			duration={data.speed}
 		/>
 	</div>
 </main>

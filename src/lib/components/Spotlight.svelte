@@ -6,6 +6,7 @@
 	import { slideTo } from '$lib/navigate';
 	import Fuse from 'fuse.js';
 	import { createEventDispatcher } from 'svelte';
+	import { get } from 'svelte/store';
 
 	const dispatch = createEventDispatcher();
 
@@ -60,8 +61,8 @@
 			? fuse.search(input).map(({ item }) => item)
 			: [
 					...$recent,
-					...source.filter(
-						(s) => !$recent.find((r) => r.name === s.name)
+					...source.filter((s) =>
+						get(recent).find((r) => r.name === s.name)
 					),
 			  ];
 
