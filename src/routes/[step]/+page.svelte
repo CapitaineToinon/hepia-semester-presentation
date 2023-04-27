@@ -1,7 +1,7 @@
 <script>
 	import SlideWrapper from '$lib/components/Slide.svelte';
 	import { slides } from '$lib/components/slides';
-	import { createContext, setContext } from '$lib/context';
+	import { createContext } from '$lib/context';
 	import { debounceFn } from '$lib/debounce';
 	import Spotlight from '$lib/components/Spotlight.svelte';
 	import { slideTo } from '$lib/navigate.js';

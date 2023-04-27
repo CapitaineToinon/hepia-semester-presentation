@@ -8,7 +8,7 @@ const symbol = Symbol('ctx');
  */
 export function createContext(intial) {
 	/**
-	 * @type {import('./context').Context}
+	 * @type {App.Context}
 	 */
 	const ctx = {
 		darkMode: writable(intial.darkMode ?? false),
@@ -22,14 +22,14 @@ export function createContext(intial) {
 
 export function getContext() {
 	/**
-	 * @type {import('./context').Context)}
+	 * @type {App.Context}
 	 */
 	const ctx = _get(symbol);
 	return ctx;
 }
 
 /**
- * @param {import('./context').Context} ctx
+ * @param {App.Context} ctx
  */
 export function setContext(ctx) {
 	return _set(symbol, ctx);

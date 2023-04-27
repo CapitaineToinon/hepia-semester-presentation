@@ -6,6 +6,18 @@ declare global {
 		// interface Locals {}
 		// interface PageData {}
 		// interface Platform {}
+
+		interface Context {
+			darkMode: Writable<bool>;
+			key: Writable<number>;
+			recent: Writable<
+				{
+					name: string;
+					isRecent: true;
+					action: () => void;
+				}[]
+			>;
+		}
 	}
 }
 
