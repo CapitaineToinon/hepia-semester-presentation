@@ -30,15 +30,23 @@
 	$: {
 		x.set((step - index) * -100);
 	}
+
+	let load = false;
+
+	$: if (!load) {
+		load = Math.abs(step - index) < 2;
+	}
 </script>
 
-{#key $key}
-	<div
-		class="fixed inset-0 transform translate-x-[--x] opacity-100"
-		style:transition-duration={`${duration}ms`}
-		style:--x={`${$x}%`}
-		class:opacity-50={!isActive}
-	>
-		<slot />
-	</div>
-{/key}
+{#if load}
+	{#key $key}
+		<div
+			class="fixed inset-0 transform translate-x-[--x] opacity-100"
+			style:transition-duration={`${duration}ms`}
+			style:--x={`${$x}%`}
+			class:opacity-50={!isActive}
+		>
+			<slot />
+		</div>
+	{/key}
+{/if}

@@ -59,15 +59,10 @@
 	$: matches =
 		input.length > 0
 			? fuse.search(input).map(({ item }) => item)
-			: [
-					...$recent,
-					...source.filter((s) =>
-						get(recent).find((r) => r.name === s.name)
-					),
-			  ];
+			: [...$recent, ...source].slice(0, 8);
 
-	$: {
-		if (matches.length) selected = 0;
+	$: if (matches.length) {
+		selected = 0;
 	}
 
 	/**
