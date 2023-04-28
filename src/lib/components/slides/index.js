@@ -61,7 +61,7 @@ export const slides = [
 	{ name: 'tRPC', chapter: 'Solutions', component: SlideTrpc },
 	{ name: 'And many more', chapter: 'Solutions', component: SlideAndMore },
 	{ name: 'Final stack', chapter: 'Solutions', component: SlideFinalStack },
-	{ name: 'Playeright', chapter: 'Solutions', component: SlidePlaywright },
+	{ name: 'Playwright', chapter: 'Solutions', component: SlidePlaywright },
 	{ name: 'Github CI', chapter: 'Solutions', component: SlideGithub },
 	{ name: 'Going further', chapter: 'Conclusion', component: SlideFurther },
 	{ name: 'Final words', chapter: 'Conclusion', component: SlideFinalWords },

@@ -26,6 +26,7 @@
 	 * @param {KeyboardEvent} e
 	 */
 	function onKeyDown(e) {
+		console.log(e.key);
 		switch (e.key) {
 			case 'Escape':
 				dialogRef.open && dialogRef.close();
@@ -41,6 +42,7 @@
 				e.preventDefault();
 				$key++;
 				break;
+			case ' ':
 			case 'ArrowUp':
 			case 'ArrowRight':
 				if (dialogRef.open) return;
